@@ -1,0 +1,23 @@
+{
+  "extension": [
+    ".js",
+    ".jsx"
+  ],
+  "excludes": [
+    "./node_modules/**",
+    "*.test.{js,jsx}",
+     "*hooks.{js,jsx}",
+     "*Mock.js",
+     "*Hooks.{js,jsx}",
+    "dist"
+  ],
+  "require": [
+    "@babel/register"
+  ],
+  "reporter": [
+    "text-summary",
+    "json"
+  ],
+  "sourceMap": false,
+  "cache": true
+}
