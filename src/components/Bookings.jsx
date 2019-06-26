@@ -25,49 +25,12 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function Bookings() {
+function Bookings({ bookings }) {
   const classes = useStyles();
   const [value, setValue] = useState(0);
 
   //my data
-  const [event, setSetEvent] = useState([
-    {
-      name: "Sherry Websites Illustration Types",
-      date: "Friday, 26.4.19",
-      time: "12.30pm - 4.30pm",
-      status: "cancelled"
-    },
-    {
-      name: "Sherry Complexity Brown",
-      date: "Friday, 26.4.19",
-      time: "12.30pm - 4.30pm",
-      status: "scheduled"
-    },
-    {
-      name: "Sherry Websites Illustration Types",
-      date: "Friday, 26.4.19",
-      time: "12.30pm - 4.30pm",
-      status: "scheduled"
-    },
-    {
-      name: "Pending Pending",
-      date: "Friday, 26.4.19",
-      time: "12.30pm - 4.30pm",
-      status: "pending"
-    },
-    {
-      name: "Complete Complete",
-      date: "Friday, 26.4.19",
-      time: "12.30pm - 4.30pm",
-      status: "complete"
-    },
-    {
-      name: "Rejected Rejected",
-      date: "Friday, 26.4.19",
-      time: "12.30pm - 4.30pm",
-      status: "reject"
-    }
-  ]);
+  const [event, setSetEvent] = useState(bookings);
 
   //tab change
   const handleChange = (event, newValue) => {
