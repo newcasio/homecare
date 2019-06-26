@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -8,10 +8,9 @@ import Typography from "@material-ui/core/Typography";
 
 import style from "../const/themes/whiteGreyTheme";
 
-import Upcoming from "./tabs/Upcoming";
+import ShowTasks from "./tabs/ShowTasks";
 
 function TabContainer(props) {
-  // console.log(props);
   return (
     <Typography component="div" style={{ padding: 8 * 3 }}>
       {props.children}
@@ -30,9 +29,71 @@ function Bookings() {
   const classes = useStyles();
   const [value, setValue] = useState(0);
 
-  function handleChange(event, newValue) {
+  //my data
+  const [event, setSetEvent] = useState([
+    {
+      name: "Sherry Websites Illustration Types",
+      date: "Friday, 26.4.19",
+      time: "12.30pm - 4.30pm",
+      status: "cancelled"
+    },
+    {
+      name: "Sherry Complexity Brown",
+      date: "Friday, 26.4.19",
+      time: "12.30pm - 4.30pm",
+      status: "scheduled"
+    },
+    {
+      name: "Sherry Websites Illustration Types",
+      date: "Friday, 26.4.19",
+      time: "12.30pm - 4.30pm",
+      status: "scheduled"
+    },
+    {
+      name: "Pending Pending",
+      date: "Friday, 26.4.19",
+      time: "12.30pm - 4.30pm",
+      status: "pending"
+    },
+    {
+      name: "Complete Complete",
+      date: "Friday, 26.4.19",
+      time: "12.30pm - 4.30pm",
+      status: "complete"
+    },
+    {
+      name: "Rejected Rejected",
+      date: "Friday, 26.4.19",
+      time: "12.30pm - 4.30pm",
+      status: "reject"
+    }
+  ]);
+
+  //tab change
+  const handleChange = (event, newValue) => {
     setValue(newValue);
-  }
+  };
+
+  //sort data for tabs display
+  let upcomingData = [];
+  let requestData = [];
+  let completeData = [];
+
+  const sortData = event => {
+    upcomingData = [];
+    requestData = [];
+    completeData = [];
+    event.forEach(ev => {
+      if (ev.status === "cancelled" || ev.status === "scheduled") {
+        upcomingData.push(ev);
+      } else if (ev.status === "pending") {
+        requestData.push(ev);
+      } else if (ev.status === "complete" || ev.status === "reject") {
+        completeData.push(ev);
+      }
+    });
+  };
+  sortData(event);
 
   return (
     <div>
@@ -45,11 +106,19 @@ function Bookings() {
       </AppBar>
       {value === 0 && (
         <TabContainer>
-          <Upcoming />
+          <ShowTasks data={upcomingData} />
         </TabContainer>
       )}
-      {value === 1 && <TabContainer>Requests to be filled</TabContainer>}
-      {value === 2 && <TabContainer>Completed tasks</TabContainer>}
+      {value === 1 && (
+        <TabContainer>
+          <ShowTasks data={requestData} />
+        </TabContainer>
+      )}
+      {value === 2 && (
+        <TabContainer>
+          <ShowTasks data={completeData} />
+        </TabContainer>
+      )}
     </div>
   );
 }
@@ -57,5 +126,5 @@ function Bookings() {
 export default Bookings;
 
 Bookings.propTypes = {
-  children: PropTypes.node.isRequired
+  event: PropTypes.node.isRequired
 };
