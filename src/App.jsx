@@ -1,11 +1,13 @@
-import React from 'react';
-import { hot } from 'react-hot-loader';
+import React from "react";
+import { hot } from "react-hot-loader";
 
-import Bookings from './components/Bookings';
+import Bookings from "./components/Bookings";
 
 function App() {
   return (
-    <Bookings />
+    <div className="allTabs">
+      <Bookings />
+    </div>
   );
 }
 
