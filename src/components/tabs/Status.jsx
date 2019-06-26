@@ -9,25 +9,25 @@ function Status({ status }) {
       return <div>Cancelled by member</div>;
     case "scheduled":
       return (
-        <Button color="primary.contrastText" variant="contained">
+        <Button color="default" variant="contained">
           View booking
         </Button>
       );
     case "pending":
       return (
-        <Button color="primary.contrastText" variant="contained">
+        <Button color="default" variant="contained">
           View booking
         </Button>
       );
     case "complete":
       return (
-        <Button color="primary.contrastText" variant="contained">
+        <Button color="default" variant="contained">
           Remove
         </Button>
       );
     case "reject":
       return (
-        <Button color="primary.contrastText" variant="contained">
+        <Button color="default" variant="contained">
           Remove
         </Button>
       );

@@ -89,5 +89,5 @@ function Bookings({ bookings }) {
 export default Bookings;
 
 Bookings.propTypes = {
-  event: PropTypes.node.isRequired
+  bookings: PropTypes.array.isRequired
 };

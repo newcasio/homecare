@@ -22,14 +22,12 @@ function ShowTasks({ data }) {
   return (
     <div>
       {data.map(ev => (
-        <div style={container}>
+        <div key={ev.id} style={container}>
           <Avatar className="avatar" alt="profile pic" src={avatarPic} />
 
           <Grid style={eventStyle}>
             <Grid xs={12}>
-              <h4 style={{ color: "#0E8A90", margin: "0px" }} key="index">
-                {ev.name}
-              </h4>
+              <h4 style={{ color: "#0E8A90", margin: "0px" }}>{ev.name}</h4>
             </Grid>
 
             <Grid xs={1}>
@@ -63,7 +61,7 @@ function ShowTasks({ data }) {
 }
 
 ShowTasks.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.array.isRequired
 };
 
 export default ShowTasks;
