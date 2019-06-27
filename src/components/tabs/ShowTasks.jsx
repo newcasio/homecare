@@ -2,27 +2,16 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import SvgIcon from "@material-ui/core/SvgIcon";
 import Avatar from "@material-ui/core/Avatar";
-import Grid from "@material-ui/core/Grid";
 
 import Status from "./Status";
 
 import avatarPic from "../../public/dog.png";
 
 function ShowTasks({ data }) {
-  const container = {
-    padding: "15px 0px"
-  };
-
-  const eventStyle = {
-    padding: "0px, 10px, 10px, 10px",
-    display: "grid",
-    gridTemplateColumns: "5% 30% 5% 60% "
-  };
-
   return (
     <div>
       {data.map(ev => (
-        <div key={ev.id} style={container}>
+        <div key={ev.id} className="taskContainer">
           <Avatar className="avatar" alt="profile pic" src={avatarPic} />
 
           <div>
@@ -30,7 +19,7 @@ function ShowTasks({ data }) {
               <h4 style={{ color: "#0E8A90", margin: "0px" }}>{ev.name}</h4>
             </div>
 
-            <div style={eventStyle}>
+            <div className="taskTimeDetails">
               <div>
                 <SvgIcon>
                   <path d="M19,4H18V2H16V4H8V2H6V4H5C3.89,4 3,4.9 3,6V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V6A2,2 0 0,0 19,4M19,20H5V10H19V20M19,8H5V6H19V8Z" />

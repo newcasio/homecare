@@ -28,3 +28,16 @@ a {
 .avatar {
   margin: 10px;
 }
+
+.taskContainer {
+  padding: 15px 0px;
+  display: grid;
+  grid-template-columns: 1fr 10fr;
+  border-bottom: 1px solid #e4e6e8;
+}
+
+.taskTimeDetails {
+  padding: 0px, 10px, 10px, 10px;
+  display: grid;
+  grid-template-columns: 5% 30% 5% 60%;
+}

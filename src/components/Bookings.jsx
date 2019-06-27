@@ -1,32 +1,17 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 
-import style from "../const/themes/whiteGreyTheme";
-
 import ShowTasks from "./tabs/ShowTasks";
 
 function TabContainer(props) {
-  return (
-    <Typography component="div" style={{ padding: 8 * 3 }}>
-      {props.children}
-    </Typography>
-  );
+  return <Typography component="div">{props.children}</Typography>;
 }
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.paper
-  }
-}));
-
 function Bookings({ bookings }) {
-  const classes = useStyles();
   const [value, setValue] = useState(0);
 
   //my data
@@ -66,8 +51,8 @@ function Bookings({ bookings }) {
   );
 }
 
-export default Bookings;
-
 Bookings.propTypes = {
-  bookings: PropTypes.array.isRequired
+  bookings: PropTypes.object.isRequired
 };
+
+export default Bookings;
