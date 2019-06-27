@@ -36,14 +36,14 @@ let data = {
       name: "Chief Clancy Wiggum",
       date: "Friday, 26.4.19",
       time: "12.30pm - 4.30pm",
-      status: "complete"
+      status: "cancelled"
     },
     {
       id: "7",
       name: "Kent Brockman",
       date: "Friday, 26.4.19",
       time: "12.30pm - 4.30pm",
-      status: "complete"
+      status: "pending"
     }
   ],
   complete: [
