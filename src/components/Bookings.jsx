@@ -37,27 +37,6 @@ function Bookings({ bookings }) {
     setValue(newValue);
   };
 
-  //sort data for tabs display
-  let upcomingData = [];
-  let requestData = [];
-  let completeData = [];
-
-  const sortData = event => {
-    upcomingData = [];
-    requestData = [];
-    completeData = [];
-    event.forEach(ev => {
-      if (ev.status === "cancelled" || ev.status === "scheduled") {
-        upcomingData.push(ev);
-      } else if (ev.status === "pending") {
-        requestData.push(ev);
-      } else if (ev.status === "complete" || ev.status === "reject") {
-        completeData.push(ev);
-      }
-    });
-  };
-  sortData(event);
-
   return (
     <div>
       <AppBar position="static">
@@ -67,19 +46,20 @@ function Bookings({ bookings }) {
           <Tab label="Complete" />
         </Tabs>
       </AppBar>
+
       {value === 0 && (
         <TabContainer>
-          <ShowTasks data={upcomingData} />
+          <ShowTasks data={event.upcoming} />
         </TabContainer>
       )}
       {value === 1 && (
         <TabContainer>
-          <ShowTasks data={requestData} />
+          <ShowTasks data={event.requests} />
         </TabContainer>
       )}
       {value === 2 && (
         <TabContainer>
-          <ShowTasks data={completeData} />
+          <ShowTasks data={event.complete} />
         </TabContainer>
       )}
     </div>
