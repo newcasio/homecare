@@ -7,6 +7,10 @@ import Status from "./Status";
 
 import avatarPic from "../../public/dog.png";
 
+const removeTask = taskId => {
+  console.log(`Your id is ${taskId}`);
+};
+
 function ShowTasks({ data }) {
   return (
     <div>
@@ -41,7 +45,7 @@ function ShowTasks({ data }) {
               </div>
             </div>
             <div xs={12}>
-              <Status status={ev.status} />
+              <Status event={ev} getIdToRemove={removeTask} />
             </div>
           </div>
         </div>

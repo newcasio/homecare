@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import Button from "@material-ui/core/Button";
 
-function Status({ status }) {
-  switch (status) {
+function Status({ event, getIdToRemove }) {
+  //pass Id of task to remove up to parent ShowTask
+  const removeTask = () => {
+    getIdToRemove(event.id);
+  };
+
+  switch (event.status) {
     case "cancelled":
       return <div>Cancelled by member</div>;
     case "scheduled":
@@ -17,11 +22,10 @@ function Status({ status }) {
     case "complete":
     case "reject":
       return (
-        <Button color="default" variant="contained">
+        <Button color="default" variant="contained" onClick={removeTask}>
           <strong>Remove</strong>
         </Button>
       );
-
     default:
       return <div>Unknown</div>;
   }
