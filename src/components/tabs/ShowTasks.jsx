@@ -11,7 +11,7 @@ function ShowTasks({ data }) {
   const [dataToShow, setDataToShow] = useState(data);
 
   const removeTask = taskId => {
-    const newList = [...data].filter(ev => {
+    const newList = [...dataToShow].filter(ev => {
       return ev.id != taskId;
     });
     setDataToShow(newList);
