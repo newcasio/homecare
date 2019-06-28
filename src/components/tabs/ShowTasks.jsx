@@ -7,14 +7,19 @@ import Status from "./Status";
 
 import avatarPic from "../../public/dog.png";
 
-const removeTask = taskId => {
-  console.log(`Your id is ${taskId}`);
-};
-
 function ShowTasks({ data }) {
+  const [dataToShow, setDataToShow] = useState(data);
+
+  const removeTask = taskId => {
+    const newList = [...data].filter(ev => {
+      return ev.id != taskId;
+    });
+    setDataToShow(newList);
+  };
+
   return (
     <div>
-      {data.map(ev => (
+      {dataToShow.map(ev => (
         <div key={ev.id} className="taskContainer">
           <Avatar className="avatar" alt="profile pic" src={avatarPic} />
 
