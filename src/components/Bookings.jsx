@@ -24,7 +24,6 @@ function Bookings({ bookings }) {
 
   return (
     <div>
-      <h1>hello</h1>
       <AppBar position="static" style={{ backgroundColor: "#fafafa" }}>
         <Tabs value={value} onChange={handleChange}>
           <Tab style={{ color: "#000000" }} label="Upcoming" />
