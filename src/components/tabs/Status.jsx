@@ -32,7 +32,7 @@ function Status({ event, getIdToRemove }) {
 }
 
 Status.propTypes = {
-  status: PropTypes.string.isRequired
+  status: PropTypes.object
 };
 
 export default Status;

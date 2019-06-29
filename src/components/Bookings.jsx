@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
@@ -24,7 +24,8 @@ function Bookings({ bookings }) {
 
   return (
     <div>
-      <AppBar position="static" style={{ backgroundColor: "#EBEBEB" }}>
+      <h1>hello</h1>
+      <AppBar position="static" style={{ backgroundColor: "#fafafa" }}>
         <Tabs value={value} onChange={handleChange}>
           <Tab style={{ color: "#000000" }} label="Upcoming" />
           <Tab style={{ color: "#000000" }} label="Requests" />
@@ -52,7 +53,7 @@ function Bookings({ bookings }) {
 }
 
 Bookings.propTypes = {
-  bookings: PropTypes.object.isRequired
+  bookings: PropTypes.object
 };
 
 export default Bookings;
