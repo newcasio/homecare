@@ -5,7 +5,7 @@ import { shallow } from "enzyme";
 import ShowTasks from "./ShowTasks";
 import TaskTitle from "./TaskTitle";
 
-const testData = [{ name: "Test data for ShowTasks test" }];
+const testData = [{ id: 1, name: "Test data for ShowTasks test" }];
 
 describe("Individual Tasks test", () => {
   it("should call TaskTitle component", () => {
