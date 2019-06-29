@@ -20,7 +20,7 @@ a {
 }
 
 .allTabs {
-  width: 600px;
+  width: 470px;
   border: 1px #e4e6e8 solid;
   margin: 20px;
 }
@@ -32,12 +32,20 @@ a {
 .taskContainer {
   padding: 15px 0px;
   display: grid;
-  grid-template-columns: 1fr 10fr;
+  grid-template-columns: 1fr 9fr;
   border-bottom: 1px solid #e4e6e8;
+}
+
+.taskTitle {
+  color: #0e8a90;
+  margin: 0px;
+  font-weight: 640;
+  font-family: Montserrat, sans-serif;
+  font-size: 19.75px;
 }
 
 .taskTimeDetails {
   padding: 0px, 10px, 10px, 10px;
   display: grid;
-  grid-template-columns: 5% 30% 5% 60%;
+  grid-template-columns: 8% 30% 8% 54%;
 }

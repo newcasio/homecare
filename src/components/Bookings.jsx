@@ -24,11 +24,44 @@ function Bookings({ bookings }) {
 
   return (
     <div>
-      <AppBar position="static" style={{ backgroundColor: "#fafafa" }}>
+      <AppBar
+        position="static"
+        style={{
+          backgroundColor: "#fafafa",
+          boxShadow: "none",
+          borderBottom: "1px solid #e4e6e8",
+          paddingLeft: "20px"
+        }}
+      >
         <Tabs value={value} onChange={handleChange}>
-          <Tab style={{ color: "#000000" }} label="Upcoming" />
-          <Tab style={{ color: "#000000" }} label="Requests" />
-          <Tab style={{ color: "#000000" }} label="Complete" />
+          <Tab
+            style={{
+              marginRight: "28px",
+              padding: "0",
+              color: "#000000",
+              fontSize: "19px"
+            }}
+            label="Upcoming"
+          />
+          x
+          <Tab
+            style={{
+              marginRight: "28px",
+              padding: "0",
+              color: "#000000",
+              fontSize: "19px"
+            }}
+            label="Requests"
+          />
+          <Tab
+            style={{
+              marginRight: "28px",
+              padding: "0",
+              color: "#000000",
+              fontSize: "19px"
+            }}
+            label="Complete"
+          />
         </Tabs>
       </AppBar>
 

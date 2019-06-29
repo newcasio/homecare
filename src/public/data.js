@@ -16,7 +16,7 @@ let data = {
     },
     {
       id: "3",
-      name: "Sherry Websites Illustration Types",
+      name: "Sherry Complexity Brown",
       date: "Friday, 26.4.19",
       time: "12.30pm - 4.30pm",
       status: "scheduled"
@@ -36,7 +36,7 @@ let data = {
       name: "Chief Clancy Wiggum",
       date: "Friday, 26.4.19",
       time: "12.30pm - 4.30pm",
-      status: "cancelled"
+      status: "pending"
     },
     {
       id: "7",
