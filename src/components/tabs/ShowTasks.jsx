@@ -4,6 +4,7 @@ import SvgIcon from "@material-ui/core/SvgIcon";
 import Avatar from "@material-ui/core/Avatar";
 
 import Status from "./Status";
+import TaskTitle from "./TaskTitle";
 
 import avatarPic from "../../public/dog.png";
 
@@ -25,7 +26,7 @@ function ShowTasks({ data }) {
 
           <div>
             <div>
-              <h4 style={{ color: "#0E8A90", margin: "0px" }}>{ev.name}</h4>
+              <TaskTitle titleContent={ev.name} />
             </div>
 
             <div className="taskTimeDetails">

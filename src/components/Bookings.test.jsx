@@ -5,7 +5,7 @@ import { shallow } from "enzyme";
 import Tab from "@material-ui/core/Tab";
 
 import Bookings from "./Bookings";
-import data from "../public/data.js";
+import data from "../public/minData.js";
 
 function setup(specProps) {
   const defaultProps = {
